@@ -3,14 +3,33 @@
     <meta charset="utf-8">
     <title>D3 Test</title>
     <script type = "text/javascript" src = "d3/d3.js"></script>
-    <style type = "text/css"></style>
+    <style type = "text/css">
+        div.bar 
+        {
+            display: inline-block;
+            width: 20px;
+            height: 75px;   /* We'll override this later */
+            background-color: teal;
+            margin-right: 2px; 
+        }
+
+    </style>
   </head>
   <body>
     <script type = "text/javascript">
         var dataset = [5, 10, 15, 20, 25];
-        d3.select("body").selectAll("p").data(dataset)
+      
+        d3.select("body").selectAll("div").data(dataset)
         .enter()
-        .append("p").text(function(d) {return d}); 
+        .append("div")
+        .attr("class", "bar")
+        .style("height", function(d)
+          {
+            return d*5 + "px"; 
+          });
+
+
+
     </script>
   </body>
 </html>
