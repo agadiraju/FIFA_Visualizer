@@ -10,12 +10,33 @@
           {
             return d*5 + "px"; 
           });*/
-        
+
         var w = 1100;
-        var h = 500;
+        var h = 200;
         var barPadding = 1;
-        var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
-                11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+        //var dataset = [];
+        
+        var dataset = $.getJSON('data/arsenal.json', function(arsenal)
+        {
+         var d = [];
+
+         for (var i in arsenal.players)
+         {
+            d.push(arsenal.players[i].G);
+
+            //console.log(arsenal.players[i].Name)
+
+            
+         }
+
+         console.log(d)
+
+         return d;
+        });
+ 
+        console.log(dataset)
+        //var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+          //      11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
 
 
         var svg = d3.select("body").append("svg")
