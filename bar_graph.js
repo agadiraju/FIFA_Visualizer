@@ -47,13 +47,18 @@
            {
               return d;
            })
+           .attr("text-anchor", "middle")
            .attr("x", function(d, i)
            {
-              return i * (w/dataset.length) + 5;
+              return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
            })
            .attr("y", function(d)
            {
-              return h - (d * 4) + 15;  
+              if (d > 0)  // only display non zero values
+              {
+                return h - (d * 4) + 15; 
+              }
+               
            })
            .attr("font-family", "sans-serif")
            .attr("font-size", "11px")
