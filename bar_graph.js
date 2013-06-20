@@ -13,7 +13,7 @@
 
         var w = 1100;
         var h = 200;
-        var barPadding = 1;
+        var barPadding = 2;
         //var dataset = [];
         
         var dataset = $.getJSON('data/arsenal.json', function(arsenal)
