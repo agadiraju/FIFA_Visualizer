@@ -33,12 +33,17 @@
 
          dataset = d;
          console.log(dataset)
+         draw_bar_graph();
 
-         var svg = d3.select("body").append("svg")
+        });
+
+        function draw_bar_graph()
+        {
+          var svg = d3.select("body").append("svg")
                   .attr("width", w)
                   .attr("height", h);
 
-        svg.selectAll("rect")
+          svg.selectAll("rect")
            .data(dataset)
            .enter()
            .append("rect")
@@ -57,7 +62,7 @@
             })
            .attr("fill", "teal");
 
-        svg.selectAll("text").data(dataset)
+          svg.selectAll("text").data(dataset)
            .enter().append("text")
            .text(function(d)
            {
@@ -79,9 +84,7 @@
            .attr("font-family", "sans-serif")
            .attr("font-size", "11px")
            .attr("fill", "white");
-
-         //return d;
-        });
+        }
  
         
         //var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
