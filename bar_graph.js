@@ -14,32 +14,27 @@
         var w = 1100;
         var h = 200;
         var barPadding = 2;
-        //var dataset = [];
+        var dataset = [];
         
-        var dataset = $.getJSON('data/arsenal.json', function(arsenal)
+        $.getJSON('data/arsenal.json', function(arsenal)
         {
          var d = [];
 
          for (var i in arsenal.players)
          {
-            d.push(arsenal.players[i].G);
+            d.push(parseInt(arsenal.players[i].G));
 
-            console.log(arsenal.players[i].Name)
+            //console.log(arsenal.players[i].Name)
 
             
          }
 
-         console.log(d)
+         //console.log(d)
 
-         return d;
-        });
- 
-        console.log(dataset)
-        //var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
-          //      11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+         dataset = d;
+         console.log(dataset)
 
-
-        var svg = d3.select("body").append("svg")
+         var svg = d3.select("body").append("svg")
                   .attr("width", w)
                   .attr("height", h);
 
@@ -75,7 +70,7 @@
            })
            .attr("y", function(d)
            {
-              if (d > 0)  // only display non zero values
+              if (d > 5)  // only display non zero values
               {
                 return h - (d * 4) + 15; 
               }
@@ -84,6 +79,16 @@
            .attr("font-family", "sans-serif")
            .attr("font-size", "11px")
            .attr("fill", "white");
+
+         //return d;
+        });
+ 
+        
+        //var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+          //      11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+
+
+        
 
 
 
