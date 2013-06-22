@@ -24,7 +24,7 @@
          {
             d.push(arsenal.players[i].G);
 
-            //console.log(arsenal.players[i].Name)
+            console.log(arsenal.players[i].Name)
 
             
          }
