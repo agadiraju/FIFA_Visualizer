@@ -22,7 +22,13 @@
 
          for (var i in arsenal.players)
          {
-            d.push(parseInt(arsenal.players[i].G));
+            value = arsenal.players[i].A;
+
+            if (value != 0)
+            {
+                d.push(parseInt(value));  
+            }
+            
 
             //console.log(arsenal.players[i].Name)
 
