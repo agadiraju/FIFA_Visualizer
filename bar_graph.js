@@ -12,7 +12,7 @@
           });*/
 
         var w = 1100;
-        var h = 200;
+        var h = 500;
         var barPadding = 2;
         var dataset = [];
         
